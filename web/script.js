@@ -6,7 +6,7 @@ window.onload = function () {
 	var preloaderRenderer = Tempo.prepare("preloader")
 	var summaryRenderer = Tempo.prepare("summary")
 	var chartTitleRenderer = Tempo.prepare("chart-title")
-	var legendsRenderer = Tempo.prepare("chart-legends")
+	var legendRenderer = Tempo.prepare("chart-legend")
 	var execTimeRenderer = Tempo.prepare("execution-time")
 	var errorRenderer = Tempo.prepare("error")
 
@@ -14,7 +14,7 @@ window.onload = function () {
 	var paperHeight = Math.floor(paperWidth * 0.5)
 	var paper = Raphael(document.getElementById("chart"), paperWidth, paperHeight)
 
-	function legends(states)
+	function legend(states)
 	{
 		var result = []
 		for (var i in states) {
@@ -66,7 +66,7 @@ window.onload = function () {
 		var opts = {axis: "0 0 1 1", axisxstep: 20, axisystep: 10}
 		paper.linechart(left, top, w, h, xs, ys, opts)
 
-		legendsRenderer.render(legends(states))
+		legendRenderer.render(legend(states))
 	}
 
 
