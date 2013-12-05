@@ -59,10 +59,9 @@ window.onload = function () {
 		chartTitleRenderer.render([["Estimated probability per age"]])
 		
 		paper.clear()
-		var left = 30
-		var top = 0
-		var w = paper.width - left - 1
-		var h = paper.height - 10
+		var top = 0, right = 5, bottom = 10, left = 30 //margins
+		var w = paper.width - left - right
+		var h = paper.height - top - bottom
 		var opts = {axis: "0 0 1 1", axisxstep: 20, axisystep: 10}
 		paper.linechart(left, top, w, h, xs, ys, opts)
 
@@ -93,7 +92,6 @@ window.onload = function () {
 	function submit(event)
 	{
 		//clear previous output
-		document.getElementById("output").style.display = "none"
 		errorRenderer.clear()
 		
 		var n = document.getElementById("population-size").value

@@ -34,6 +34,10 @@ ul.horizontal li {
 	margin-left: 1.5em
 }
 
+ul.horizontal li:first-child {
+	margin-left: 0
+}
+
 .discrete {
 	font-size: small
 }
